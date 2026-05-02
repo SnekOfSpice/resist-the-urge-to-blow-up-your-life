@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dbkm3ut36e2e7"]
+
+[ext_resource type="Theme" uid="uid://cij2bbtyvqe2l" path="res://game/theme.tres" id="1_emt18"]
+[ext_resource type="Script" uid="uid://brkec6jruergd" path="res://game/main.gd" id="1_xtpaf"]
+[ext_resource type="Script" uid="uid://d1o87gqrkrfgp" path="res://game/dialogue.gd" id="2_emt18"]
+[ext_resource type="AudioStream" uid="uid://b68ok4gh65mnu" path="res://Opal Vessel - Torture Practices - 02 Drenched.ogg" id="4_vop5m"]
+
+[node name="Main" type="Control" unique_id=1469390727]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_emt18")
+script = ExtResource("1_xtpaf")
+
+[node name="Dialogue" type="Node" parent="." unique_id=1950543551 node_paths=PackedStringArray("background", "body_label", "text_container")]
+unique_name_in_owner = true
+script = ExtResource("2_emt18")
+background = NodePath("../TextureRect")
+text_speed = 35.0
+auto_pause_duration = 0.8
+name_style = 2
+body_label = NodePath("../MarginContainer/RichTextLabel")
+text_container = NodePath("../MarginContainer/RichTextLabel")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=903787943]
+stream = ExtResource("4_vop5m")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=539047460]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=871682442]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 17
+theme_override_constants/margin_right = 17
+theme_override_constants/margin_bottom = 17
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1625168734]
+layout_mode = 2
+mouse_filter = 2
+fit_content = true
