@@ -13,7 +13,8 @@ config_version=5
 config/name="Resist the urge to blow up your life"
 run/main_scene="uid://dbkm3ut36e2e7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://d2wht0lm5cmt2"
+config/windows_native_icon="res://game/icon.ico"
 
 [autoload]
 
@@ -37,6 +38,8 @@ plugin/checks/check_for_linux_input=true
 
 window/size/viewport_width=600
 window/size/viewport_height=450
+window/size/mode=2
+window/size/initial_position_type=4
 window/stretch/mode="viewport"
 
 [editor_plugins]
@@ -61,3 +64,4 @@ advance={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
